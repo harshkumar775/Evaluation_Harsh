@@ -1,0 +1,14 @@
+class Solution(object):
+    def plusOne(self, digits):
+        # Iterate backward through the list
+        for i in range(len(digits) - 1, -1, -1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+            
+            # If the digit is 9, it becomes 0 and the loop continues to carry the 1
+            digits[i] = 0
+            
+        # If the loop finishes, all digits were 9. 
+        # Add a 1 to the beginning.
+        return [1] + digits
